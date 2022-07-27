@@ -1,8 +1,11 @@
 package com.homeworks.app;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 public class Motorcyclist {
     private String name; //motorcyclist's name
-    private EquipMotorcyclst equipMotorcyclst; //equipment that he puts on
+
 
     /**
      * Default constructor.
@@ -10,7 +13,6 @@ public class Motorcyclist {
 
     public Motorcyclist() {
         name = "Maks";
-        equipMotorcyclst = new EquipMotorcyclst();
     }
 
     /**
@@ -19,16 +21,6 @@ public class Motorcyclist {
 
     public Motorcyclist(String name) {
         this.name = name;
-        equipMotorcyclst = new EquipMotorcyclst();
-    }
-
-    /**
-     * Constructor with all parameter.
-     */
-
-    public Motorcyclist(String name, EquipMotorcyclst equipMotorcyclst) {
-        this.name = name;
-        this.equipMotorcyclst = equipMotorcyclst;
     }
 
     public String getName() {
@@ -39,11 +31,10 @@ public class Motorcyclist {
         this.name = name;
     }
 
-    public EquipMotorcyclst getEquipMotorcyclst() {
-        return equipMotorcyclst;
-    }
 
-    public void setEquipMotorcyclst(EquipMotorcyclst equipMotorcyclst) {
-        this.equipMotorcyclst = equipMotorcyclst;
+    @Override
+    public String toString() {
+        return "Motorcyclist " +
+                "name is " + name;
     }
 }

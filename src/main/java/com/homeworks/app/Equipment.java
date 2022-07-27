@@ -1,11 +1,13 @@
 package com.homeworks.app;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Equipment {
     private String name;
     private String category;
     private double weight;
     private double cost;
-
 
     public Equipment() {
     }
@@ -65,5 +67,17 @@ public abstract class Equipment {
 
     public void setCost(double cost) {
         this.cost = cost;
+    }
+
+    public abstract void putOnEquipment();
+
+    @Override
+    public String toString() {
+        return "Equipment{" +
+                "name='" + name + '\'' +
+                ", category='" + category + '\'' +
+                ", weight=" + weight +
+                ", cost=" + cost +
+                '}';
     }
 }
