@@ -3,15 +3,20 @@ package com.homeworks.app;
 public class Helmet extends Equipment{
 
     public Helmet(){
-        super("Helmet", 1000, 4465);
+        super();
     }
 
     @Override
     public void putOnEquipment() {
-        System.out.println(" helmet on" );
+        if(!isStateEquipment()){
+            setStateEquipment(true);
+            System.out.println("Helmet put on");
+        } else {
+            System.out.println("The helmet is already on!");
+        }
     }
 
-    public Helmet(double cost) {
-        super("Helmet", 1000, cost);
+    public Helmet(double weight, double cost) {
+        super("Helmet", weight, cost);
     }
 }

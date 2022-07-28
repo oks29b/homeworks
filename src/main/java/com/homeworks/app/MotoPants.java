@@ -1,11 +1,16 @@
-//package com.homeworks.app;
-//
-//public class MotoPants extends LowerBodyProtection {
-//    public MotoPants(){
-//        super("Pants", 750);
-//    }
-//
-//    public MotoPants(double cost) {
-//        super("Pants", 750, cost);
-//    }
-//}
+package com.homeworks.app;
+
+public class MotoPants extends Equipment {
+    public MotoPants(){
+        super();
+    }
+
+    @Override
+    public void putOnEquipment() {
+
+    }
+
+    public MotoPants(double weight, double cost){
+        super("MotoPants", weight, cost);
+    }
+}

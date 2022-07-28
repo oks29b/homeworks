@@ -1,12 +1,16 @@
-//package com.homeworks.app;
-//
-//public class EllowPads extends UpperBodyProtection{
-//
+package com.homeworks.app;
+
+public class EllowPads extends Equipment{
+
 //    public EllowPads(){
-//        super("Ellow Pads", 245);
+//        super();
 //    }
-//
-//    public EllowPads(double cost) {
-//        super("Ellow Pads", 245, cost);
-//    }
-//}
+
+    @Override
+    public void putOnEquipment() {
+    }
+
+    public EllowPads(double weight, double cost) {
+        super("Ellow Pads", weight, cost);
+    }
+}

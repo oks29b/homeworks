@@ -1,11 +1,16 @@
-//package com.homeworks.app;
-//
-//public class MotoGloves extends UpperBodyProtection{
-//    public MotoGloves(){
-//        super("Gloves", 130);
-//    }
-//
-//    public MotoGloves(double cost) {
-//        super("Gloves", 130, cost);
-//    }
-//}
+package com.homeworks.app;
+
+public class MotoGloves extends Equipment{
+    public MotoGloves(){
+        super();
+    }
+
+    @Override
+    public void putOnEquipment() {
+
+    }
+
+public MotoGloves(double weight, double cost){
+    super("MotoGloves", weight, cost);
+}
+}

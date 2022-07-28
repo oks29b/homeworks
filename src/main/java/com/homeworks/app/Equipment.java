@@ -9,6 +9,8 @@ public abstract class Equipment {
     private double weight;
     private double cost;
 
+    private boolean stateEquipment = false;
+
     public Equipment() {
     }
 
@@ -67,6 +69,14 @@ public abstract class Equipment {
 
     public void setCost(double cost) {
         this.cost = cost;
+    }
+
+    public boolean isStateEquipment() {
+        return stateEquipment;
+    }
+
+    public void setStateEquipment(boolean stateEquipment) {
+        this.stateEquipment = stateEquipment;
     }
 
     public abstract void putOnEquipment();
