@@ -11,10 +11,13 @@ import java.util.Scanner;
 public class Main {
     public static void main( String[] args ) {
 
-        Motorcyclist motorcyclist = new Motorcyclist("A");
+        Motorcyclist motorcyclist = new Motorcyclist("Maks");
 
-        motorcyclist.showListEquipmentWhatYouCanWear();
+//        motorcyclist.putOnSelectedElementsEquipment();
+
+        motorcyclist.showOptions();
         System.out.println(motorcyclist);
+
 
     }
 }

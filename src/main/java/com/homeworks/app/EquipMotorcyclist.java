@@ -8,7 +8,7 @@ public class EquipMotorcyclist {
     public EquipMotorcyclist() {
     }
 
-    public List<?> getElementsOfEquipments() {
+    public List<?> getElementsOfEquipmentsOfPriceParametrs() {
         return elementsOfEquipments;
     }
 
@@ -40,6 +40,7 @@ public class EquipMotorcyclist {
 
     public void sortElementsEquipmentByWeight(){
         Collections.sort(elementsOfEquipments, new WeightComparator());
+        System.out.println(elementsOfEquipments.toString());
     }
 
     public void showEquipmentsByCost(){
@@ -74,8 +75,6 @@ public class EquipMotorcyclist {
 
     @Override
     public String toString() {
-        return "EquipMotorsyclist{" +
-                "elementsOfEquipments=" + elementsOfEquipments +
-                '}';
+        return "\nelement of equipment = " + "\n" + elementsOfEquipments + "\n";
     }
 }

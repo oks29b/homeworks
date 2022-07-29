@@ -83,11 +83,10 @@ public abstract class Equipment {
 
     @Override
     public String toString() {
-        return "Equipment{" +
-                "name='" + name + '\'' +
-                ", category='" + category + '\'' +
-                ", weight=" + weight +
-                ", cost=" + cost +
-                '}';
+        return "Equipment: " +
+                "name= " + name +
+                ", " + "category='" + category+
+                ", " + "weight=" + weight +
+                ", " + "cost=" + cost;
     }
 }
