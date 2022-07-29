@@ -115,10 +115,11 @@ public class Motorcyclist {
                 case 0:
                     sc.close();
                     break;
+                default:
+                    System.out.println("Try again");
+                    break;
             }
         }
-        System.out.println("Enter weight and cost equipment");
-
 
         return equipMotorcyclist;
     }

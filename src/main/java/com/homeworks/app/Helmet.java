@@ -1,10 +1,14 @@
 package com.homeworks.app;
 
-public class Helmet extends Equipment{
+public class Helmet extends UpperBodyProtection{
 
     public Helmet(){
         super();
     }
+
+
+    //TODO: make an implementation of the method if necessary
+    //for example, realised abstract method which is not used anywhere
 
     @Override
     public void putOnEquipment() {

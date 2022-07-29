@@ -1,10 +1,12 @@
 package com.homeworks.app;
 
-public class MotoPants extends Equipment {
+public class MotoPants extends LowerBodyProtection {
     public MotoPants(){
         super();
     }
 
+
+    //TODO: make an implementation of the method if necessary
     @Override
     public void putOnEquipment() {
 

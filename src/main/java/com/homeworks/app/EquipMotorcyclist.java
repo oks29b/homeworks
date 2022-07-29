@@ -13,6 +13,7 @@ public class EquipMotorcyclist {
     }
 
     public boolean addElementOfEquipment(Equipment equipment){
+        equipment.setStateEquipment(true);
         return elementsOfEquipments.add(equipment);
     }
 

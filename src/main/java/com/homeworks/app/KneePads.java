@@ -1,10 +1,11 @@
 package com.homeworks.app;
 
-public class KneePads extends Equipment{
+public class KneePads extends LowerBodyProtection{
     public KneePads(){
         super();
     }
 
+    //TODO: make an implementation of the method if necessary
     @Override
     public void putOnEquipment() {
     }
