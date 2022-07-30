@@ -175,7 +175,7 @@ public class Motorcyclist {
                     break;
                 case 5:
                     try {
-                        equipMotorcyclist.getElementsOfEquipmentsOfPriceParametrs();
+                        equipMotorcyclist.findEquipByPriceRange();
                     }catch (NullPointerException e){
                         System.out.println("First put on a motorcyclist");
                     }

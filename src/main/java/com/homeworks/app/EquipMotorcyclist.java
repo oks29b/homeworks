@@ -8,10 +8,6 @@ public class EquipMotorcyclist {
     public EquipMotorcyclist() {
     }
 
-    public List<?> getElementsOfEquipmentsOfPriceParametrs() {
-        return elementsOfEquipments;
-    }
-
     public boolean addElementOfEquipment(Equipment equipment){
         equipment.setStateEquipment(true);
         return elementsOfEquipments.add(equipment);
@@ -43,7 +39,14 @@ public class EquipMotorcyclist {
         System.out.println(elementsOfEquipments.toString());
     }
 
-    public void showEquipmentsByCost(){
+
+    /**
+     * Find equipment according to the given price
+     * by lower - upper range
+     * return List of found equipment.
+     */
+
+    public void findEquipByPriceRange(){
         Scanner sc = new Scanner(System.in);
         double lowerCost, upperCost;
         double cost;
