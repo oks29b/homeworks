@@ -1,6 +1,6 @@
 package com.homeworks.app.homework1.moto;
 
-import com.homeworks.app.homework1.equip.Equipment;
+import com.homeworks.app.homework1.equipment.Equipment;
 
 import java.util.*;
 

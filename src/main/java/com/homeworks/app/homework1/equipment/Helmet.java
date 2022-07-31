@@ -1,4 +1,4 @@
-package com.homeworks.app.homework1.equip;
+package com.homeworks.app.homework1.equipment;
 
 import com.homeworks.app.homework1.protectarea.UpperBodyProtection;
 

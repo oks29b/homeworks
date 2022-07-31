@@ -1,4 +1,4 @@
-package com.homeworks.app;
+package com.homeworks.app.homework1;
 
 import static org.junit.Assert.assertTrue;
 

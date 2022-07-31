@@ -1,6 +1,6 @@
 package com.homeworks.app.homework1.protectarea;
 
-import com.homeworks.app.homework1.equip.Equipment;
+import com.homeworks.app.homework1.equipment.Equipment;
 
 public abstract class LowerBodyProtection extends Equipment {
     public LowerBodyProtection(){

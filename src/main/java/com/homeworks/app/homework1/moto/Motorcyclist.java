@@ -1,6 +1,6 @@
 package com.homeworks.app.homework1.moto;
 
-import com.homeworks.app.homework1.equip.*;
+import com.homeworks.app.homework1.equipment.*;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

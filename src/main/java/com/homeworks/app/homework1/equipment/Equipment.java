@@ -1,4 +1,4 @@
-package com.homeworks.app.homework1.equip;
+package com.homeworks.app.homework1.equipment;
 
 /**
  * This class describe the equipment in general.

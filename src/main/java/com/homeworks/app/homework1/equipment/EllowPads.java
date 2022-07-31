@@ -1,4 +1,4 @@
-package com.homeworks.app.homework1.equip;
+package com.homeworks.app.homework1.equipment;
 
 import com.homeworks.app.homework1.protectarea.UpperBodyProtection;
 
@@ -6,20 +6,20 @@ import com.homeworks.app.homework1.protectarea.UpperBodyProtection;
  * This class describe element of equipment.
  * @author Oksana Borisenko
  */
-public class MotoJacket extends UpperBodyProtection {
-    public MotoJacket(){
+
+public class EllowPads extends UpperBodyProtection {
+
+
+    public EllowPads(){
         super();
     }
-
 
     //TODO: make an implementation of the method if necessary
     @Override
     public void putOnEquipment() {
-
     }
 
-    public MotoJacket(double weight, double cost){
-        super("MotoJacket", weight, cost);
+    public EllowPads(double weight, double cost) {
+        super("Ellow Pads", weight, cost);
     }
-
 }

@@ -1,4 +1,4 @@
-package com.homeworks.app.homework1.equip;
+package com.homeworks.app.homework1.equipment;
 
 import com.homeworks.app.homework1.protectarea.UpperBodyProtection;
 
@@ -6,8 +6,8 @@ import com.homeworks.app.homework1.protectarea.UpperBodyProtection;
  * This class describe element of equipment.
  * @author Oksana Borisenko
  */
-public class MotoGloves extends UpperBodyProtection {
-    public MotoGloves(){
+public class MotoJacket extends UpperBodyProtection {
+    public MotoJacket(){
         super();
     }
 
@@ -18,7 +18,8 @@ public class MotoGloves extends UpperBodyProtection {
 
     }
 
-public MotoGloves(double weight, double cost){
-    super("MotoGloves", weight, cost);
-}
+    public MotoJacket(double weight, double cost){
+        super("MotoJacket", weight, cost);
+    }
+
 }
