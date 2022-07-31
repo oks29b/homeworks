@@ -1,6 +1,14 @@
-package com.homeworks.app;
+package com.homeworks.app.homework1.equip;
 
-public class EllowPads extends UpperBodyProtection{
+import com.homeworks.app.homework1.protectarea.UpperBodyProtection;
+
+/**
+ * This class describe element of equipment.
+ * @author Oksana Borisenko
+ */
+
+public class EllowPads extends UpperBodyProtection {
+
 
     public EllowPads(){
         super();

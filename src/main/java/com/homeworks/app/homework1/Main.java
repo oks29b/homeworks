@@ -1,8 +1,6 @@
-package com.homeworks.app;
+package com.homeworks.app.homework1;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import com.homeworks.app.homework1.moto.Motorcyclist;
 
 /**
  * Homework №1
@@ -23,12 +21,6 @@ public class Main {
     public static void main( String[] args ) {
 
         Motorcyclist motorcyclist = new Motorcyclist("Maks");
-
-//        motorcyclist.putOnSelectedElementsEquipment();
-
         motorcyclist.showOptions();
-        System.out.println(motorcyclist);
-
-
     }
 }

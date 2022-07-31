@@ -1,18 +1,32 @@
-package com.homeworks.app;
+package com.homeworks.app.homework1.moto;
+
+import com.homeworks.app.homework1.equip.Equipment;
 
 import java.util.*;
+
+/**
+ * This class provides methods to put on, to sort, to find, to count cost, to show equipment.
+ * @author Oksana Borisenko
+ */
 
 public class EquipMotorcyclist {
     private List<Equipment> elementsOfEquipments = new ArrayList<>();
 
+    /**
+     * Default constructor
+     */
     public EquipMotorcyclist() {
     }
 
+    /**
+     * @brief Put equip on
+     */
     public boolean addElementOfEquipment(Equipment equipment){
         equipment.setStateEquipment(true);
         return elementsOfEquipments.add(equipment);
     }
 
+    /** Show equipment wearing */
     public void showEquipmentWearing(){
         if(elementsOfEquipments.isEmpty()){
             System.out.println("You haven't added any elements yet=(");
@@ -26,6 +40,9 @@ public class EquipMotorcyclist {
         System.out.println("Total cost: " + countCost() + "rub");
     }
 
+    /**
+     * @return Total equipment cost
+     */
     public double countCost(){
         double cost = 0;
         for (Equipment e:elementsOfEquipments) {
@@ -34,16 +51,22 @@ public class EquipMotorcyclist {
         return cost;
     }
 
+    /** Sort equipment by weight */
     public void sortElementsEquipmentByWeight(){
-        Collections.sort(elementsOfEquipments, new WeightComparator());
+        Collections.sort(elementsOfEquipments, new Comparator<Equipment>() {
+            @Override
+            public int compare(Equipment e1, Equipment e2) {
+                return (int) (e1.getWeight() - e2.getWeight());
+            }
+        });
         System.out.println(elementsOfEquipments.toString());
     }
 
 
     /**
-     * Find equipment according to the given price
+     * @brief Find equipment according to the given price
      * by lower - upper range
-     * return List of found equipment.
+     * @return List of found equipment.
      */
 
     public void findEquipByPriceRange(){
@@ -76,6 +99,9 @@ public class EquipMotorcyclist {
         }
     }
 
+    /**
+     * Output to the console.
+     */
     @Override
     public String toString() {
         return "\nelement of equipment = " + "\n" + elementsOfEquipments + "\n";

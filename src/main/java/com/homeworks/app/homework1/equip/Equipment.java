@@ -1,7 +1,10 @@
-package com.homeworks.app;
+package com.homeworks.app.homework1.equip;
 
-import java.util.ArrayList;
-import java.util.List;
+/**
+ * This class describe the equipment in general.
+ * Provides basic methods to get and set fields values.
+ * @author Oksana Borisenko
+ */
 
 public abstract class Equipment {
     private String name;
@@ -83,7 +86,7 @@ public abstract class Equipment {
 
     @Override
     public String toString() {
-        return "Equipment: " +
+        return "\nEquipment: " +
                 "name= " + name +
                 ", " + "category='" + category+
                 ", " + "weight=" + weight +

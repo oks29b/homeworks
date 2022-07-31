@@ -1,5 +1,11 @@
-package com.homeworks.app;
+package com.homeworks.app.homework1.equip;
 
+import com.homeworks.app.homework1.protectarea.LowerBodyProtection;
+
+/**
+ * This class describe element of equipment.
+ * @author Oksana Borisenko
+ */
 public class MotoBoots extends LowerBodyProtection {
     public MotoBoots() {
         super();

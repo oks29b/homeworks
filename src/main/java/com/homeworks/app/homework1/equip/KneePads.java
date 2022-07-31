@@ -1,6 +1,12 @@
-package com.homeworks.app;
+package com.homeworks.app.homework1.equip;
 
-public class KneePads extends LowerBodyProtection{
+import com.homeworks.app.homework1.protectarea.LowerBodyProtection;
+
+/**
+ * This class describe element of equipment.
+ * @author Oksana Borisenko
+ */
+public class KneePads extends LowerBodyProtection {
     public KneePads(){
         super();
     }

@@ -1,8 +1,15 @@
-package com.homeworks.app;
+package com.homeworks.app.homework1.moto;
+
+import com.homeworks.app.homework1.equip.*;
 
 import java.util.InputMismatchException;
-import java.util.NoSuchElementException;
 import java.util.Scanner;
+
+/**
+ * This class realizes the main logic of the program, provides methods to
+ * equip motocyclist.
+ * @author Oksana Borisenko
+ */
 
 public class Motorcyclist {
     private String name; //motorcyclist's name
@@ -34,6 +41,9 @@ public class Motorcyclist {
         this.equipMotorcyclist = equipMotorcyclist;
     }
 
+    /**
+     * Created getters and setters.
+     */
 
     public String getName() {
         return name;
@@ -51,6 +61,9 @@ public class Motorcyclist {
         this.equipMotorcyclist = equipMotorcyclist;
     }
 
+    /**
+     * Shows all the available equipment for user.
+     */
     public EquipMotorcyclist putOnSelectedElementsEquipment(){
         equipMotorcyclist = new EquipMotorcyclist();
         Scanner sc = new Scanner(System.in);
@@ -123,6 +136,10 @@ public class Motorcyclist {
         return equipMotorcyclist;
     }
 
+    /**
+     * Shows all the available options for user.
+     */
+
     public void showOptions() {
         Scanner sc = new Scanner(System.in);
         System.gc();
@@ -189,6 +206,10 @@ public class Motorcyclist {
             }
         }
     }
+
+    /**
+     * Output to the console.
+     */
 
     @Override
     public String toString() {
