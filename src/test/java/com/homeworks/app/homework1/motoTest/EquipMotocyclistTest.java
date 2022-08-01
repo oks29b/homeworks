@@ -9,7 +9,7 @@ import org.junit.Test;
 public class EquipMotocyclistTest {
 
     @Test
-    public void Test1(){
+    public void test1(){
         EquipMotorcyclist equipMotorcyclist = new EquipMotorcyclist();
         boolean expectedResult = true;
         boolean actualResult = equipMotorcyclist.addElementOfEquipment(new Helmet());
@@ -17,7 +17,7 @@ public class EquipMotocyclistTest {
     }
 
     @Test
-    public void Test2(){
+    public void test2(){
         EquipMotorcyclist equipMotorcyclist = new EquipMotorcyclist();
         equipMotorcyclist.addElementOfEquipment(new Helmet(50,100));
         equipMotorcyclist.addElementOfEquipment(new Helmet(50,100));

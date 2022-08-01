@@ -9,7 +9,7 @@ import org.junit.Test;
 public class MotorcyclistTest {
 
     @Test
-    public void Test(){
+    public void test(){
 //        Motorcyclist motorcyclist = new Motorcyclist("Maks");
 //        motorcyclist.putOnSelectedElementsEquipment();
 //
