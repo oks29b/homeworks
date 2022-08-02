@@ -7,14 +7,14 @@ import java.util.Scanner;
 
 /**
  * This class realizes the main logic of the program, provides methods to
- * equip motocyclist.
+ * equip motorcyclist.
  * @author Oksana Borisenko
  */
 
 public class Motorcyclist {
     private String name; //motorcyclist's name
 
-    private EquipMotorcyclist equipMotorcyclist;
+    private MotorcyclistService motorcyclistService;
 
     /**
      * Default constructor.
@@ -36,9 +36,9 @@ public class Motorcyclist {
      * Constructor with all parameter.
      */
 
-    public Motorcyclist(String name, EquipMotorcyclist equipMotorcyclist) {
+    public Motorcyclist(String name, MotorcyclistService motorcyclistService) {
         this.name = name;
-        this.equipMotorcyclist = equipMotorcyclist;
+        this.motorcyclistService = motorcyclistService;
     }
 
     /**
@@ -53,88 +53,88 @@ public class Motorcyclist {
         this.name = name;
     }
 
-    public EquipMotorcyclist getEquipMotorcyclist (){
-        return equipMotorcyclist;
+    public MotorcyclistService getEquipMotorcyclist (){
+        return motorcyclistService;
     }
 
-    public void setEquipMotorcyclist(EquipMotorcyclist equipMotorcyclist) {
-        this.equipMotorcyclist = equipMotorcyclist;
+    public void setEquipMotorcyclist(MotorcyclistService motorcyclistService) {
+        this.motorcyclistService = motorcyclistService;
     }
 
-    /**
-     * Shows all the available equipment for user.
-     */
-    public EquipMotorcyclist putOnSelectedElementsEquipment(){
-        equipMotorcyclist = new EquipMotorcyclist();
-        Scanner sc = new Scanner(System.in);
-        int choice = -1;
-
-        System.out.println("What do you want to wear?");
-
-        while(choice != 0){
-            System.out.println("\nChoose one of the equipment:");
-            System.out.println("1. Ellow pads");
-            System.out.println("2. Helmet");
-            System.out.println("3. Knee pads");
-            System.out.println("4. Motorcyclist boots");
-            System.out.println("5. Ellow pads");
-            System.out.println("6. Ellow pads");
-            System.out.println("7. Ellow pads");
-            System.out.println("8. Ellow pads");
-            System.out.println("0. Exit");
-
-            try {
-                choice = sc.nextInt();
-            }
-            catch (InputMismatchException e) {
-                System.out.println("Wrong option!");
-                sc.next();
-                choice = -1;
-            }
-
-            switch (choice){
-                case 1:
-                    System.out.println("Enter weight and cost equipment");
-                    equipMotorcyclist.addElementOfEquipment(new EllowPads(sc.nextDouble(), sc.nextDouble()));
-                    break;
-                case 2:
-                    System.out.println("Enter weight and cost equipment");
-                    equipMotorcyclist.addElementOfEquipment(new Helmet(sc.nextDouble(), sc.nextDouble()));
-                    break;
-                case 3:
-                    System.out.println("Enter weight and cost equipment");
-                    equipMotorcyclist.addElementOfEquipment(new KneePads(sc.nextDouble(), sc.nextDouble()));
-                    break;
-                case 4:
-                    System.out.println("Enter weight and cost equipment");
-                    equipMotorcyclist.addElementOfEquipment(new MotoBoots(sc.nextDouble(), sc.nextDouble()));
-                    break;
-                case 5:
-                    System.out.println("Enter weight and cost equipment");
-                    equipMotorcyclist.addElementOfEquipment(new MotoGloves(sc.nextDouble(), sc.nextDouble()));
-                    break;
-                case 6:
-                    System.out.println("Enter weight and cost equipment");
-                    equipMotorcyclist.addElementOfEquipment(new MotoJacket(sc.nextDouble(), sc.nextDouble()));
-                    break;
-                case 7:
-                    System.out.println("Enter weight and cost equipment");
-                    equipMotorcyclist.addElementOfEquipment(new MotoPants(sc.nextDouble(), sc.nextDouble()));
-                    break;
-                case 8:
-                    System.out.println("Enter weight and cost equipment");
-                    equipMotorcyclist.addElementOfEquipment(new Shells(sc.nextDouble(), sc.nextDouble()));
-                    break;
-                case 0:
-//                    sc.close();
-                    break;
-                default:
-                    System.out.println("Try again");
-                    break;
-            }
-        }
-        return equipMotorcyclist;
-    }
+//    /**
+//     * Shows all the available equipment for user.
+//     */
+//    public MotorcyclistService putOnSelectedElementsEquipment(){
+//        motorcyclistService = new MotorcyclistService();
+//        Scanner sc = new Scanner(System.in);
+//        int choice = -1;
+//
+//        System.out.println("What do you want to wear?");
+//
+//        while(choice != 0){
+//            System.out.println("\nChoose one of the equipment:");
+//            System.out.println("1. Ellow pads");
+//            System.out.println("2. Helmet");
+//            System.out.println("3. Knee pads");
+//            System.out.println("4. Motorcyclist boots");
+//            System.out.println("5. MotoGloves");
+//            System.out.println("6. MotoJacket");
+//            System.out.println("7. Ellow pads");
+//            System.out.println("8. Ellow pads");
+//            System.out.println("0. Exit");
+//
+//            try {
+//                choice = sc.nextInt();
+//            }
+//            catch (InputMismatchException e) {
+//                System.out.println("Wrong option!");
+//                sc.next();
+//                choice = -1;
+//            }
+//
+//            switch (choice){
+//                case 1:
+//                    System.out.println("Enter weight and cost equipment");
+//                    motorcyclistService.addElementOfEquipment(new EllowPads(sc.nextDouble(), sc.nextDouble()));
+//                    break;
+//                case 2:
+//                    System.out.println("Enter weight and cost equipment");
+//                    motorcyclistService.addElementOfEquipment(new Helmet(sc.nextDouble(), sc.nextDouble()));
+//                    break;
+//                case 3:
+//                    System.out.println("Enter weight and cost equipment");
+//                    motorcyclistService.addElementOfEquipment(new KneePads(sc.nextDouble(), sc.nextDouble()));
+//                    break;
+//                case 4:
+//                    System.out.println("Enter weight and cost equipment");
+//                    motorcyclistService.addElementOfEquipment(new MotoBoots(sc.nextDouble(), sc.nextDouble()));
+//                    break;
+//                case 5:
+//                    System.out.println("Enter weight and cost equipment");
+//                    motorcyclistService.addElementOfEquipment(new MotoGloves(sc.nextDouble(), sc.nextDouble()));
+//                    break;
+//                case 6:
+//                    System.out.println("Enter weight and cost equipment");
+//                    motorcyclistService.addElementOfEquipment(new MotoJacket(sc.nextDouble(), sc.nextDouble()));
+//                    break;
+//                case 7:
+//                    System.out.println("Enter weight and cost equipment");
+//                    motorcyclistService.addElementOfEquipment(new MotoPants(sc.nextDouble(), sc.nextDouble()));
+//                    break;
+//                case 8:
+//                    System.out.println("Enter weight and cost equipment");
+//                    motorcyclistService.addElementOfEquipment(new Shells(sc.nextDouble(), sc.nextDouble()));
+//                    break;
+//                case 0:
+////                    sc.close();
+//                    break;
+//                default:
+//                    System.out.println("Try again");
+//                    break;
+//            }
+//        }
+//        return motorcyclistService;
+//    }
 
     /**
      * Shows all the available options for user.
@@ -168,31 +168,31 @@ public class Motorcyclist {
             switch (choice) {
                 case 1:
                     try {
-                        equipMotorcyclist.showEquipmentWearing();
+                        motorcyclistService.showEquipmentWearing();
                     }catch (NullPointerException e){
                         System.out.println("First put on a motorcyclist");
                     }
                     break;
                 case 2:
-                    putOnSelectedElementsEquipment();
+//                    putOnSelectedElementsEquipment();
                     break;
                 case 3:
                     try {
-                        System.out.println("Total cost is " + equipMotorcyclist.countCost());
+                        System.out.println("Total cost is " + motorcyclistService.countCost());
                     }catch (NullPointerException e){
                         System.out.println("First put on a motorcyclist");
                     }
                     break;
                 case 4:
                     try {
-                        equipMotorcyclist.sortElementsEquipmentByWeight();
+                        motorcyclistService.sortElementsEquipmentByWeight();
                     }catch (NullPointerException e){
                         System.out.println("First put on a motorcyclist");
                     }
                     break;
                 case 5:
                     try {
-                        equipMotorcyclist.findEquipByPriceRange();
+                        motorcyclistService.findEquipByPriceRange();
                     }catch (NullPointerException e){
                         System.out.println("First put on a motorcyclist");
                     }
@@ -214,6 +214,6 @@ public class Motorcyclist {
     @Override
     public String toString() {
         return "Motorcyclist " +
-                "name is " + name + " " + equipMotorcyclist + " is wearing: ";
+                "name is " + name + " " + motorcyclistService + " is wearing: ";
     }
 }

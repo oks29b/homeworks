@@ -1,6 +1,6 @@
 package com.homeworks.app.homework1.moto;
 
-import com.homeworks.app.homework1.equipment.Equipment;
+import com.homeworks.app.homework1.equipment.*;
 
 import java.util.*;
 
@@ -9,21 +9,71 @@ import java.util.*;
  * @author Oksana Borisenko
  */
 
-public class EquipMotorcyclist {
+public class MotorcyclistService extends ReadingDataConsole{
     private List<Equipment> elementsOfEquipments = new ArrayList<>();
 
     /**
      * Default constructor
      */
-    public EquipMotorcyclist() {
+    public MotorcyclistService() {
     }
 
     /**
      * @brief Put equip on
      */
-    public boolean addElementOfEquipment(Equipment equipment){
-        equipment.setStateEquipment(true);
-        return elementsOfEquipments.add(equipment);
+
+    public List<Equipment> putOnSelectedElements(){
+        int choice = chosingEquipment();
+        while ( choice != 0){
+            switch (choice){
+                case 1:
+                    System.out.println("Enter weight and cost equipment");
+                    elementsOfEquipments.add(new EllowPads(sc.nextDouble(), sc.nextDouble()));
+                    choice = chosingEquipment();
+                    break;
+                case 2:
+                    System.out.println("Enter weight and cost equipment");
+                    elementsOfEquipments.add(new Helmet(sc.nextDouble(), sc.nextDouble()));
+                    choice = chosingEquipment();
+                    break;
+                case 3:
+                    System.out.println("Enter weight and cost equipment");
+                    elementsOfEquipments.add(new KneePads(sc.nextDouble(), sc.nextDouble()));
+                    choice = chosingEquipment();
+                    break;
+                case 4:
+                    System.out.println("Enter weight and cost equipment");
+                    elementsOfEquipments.add(new MotoBoots(sc.nextDouble(), sc.nextDouble()));
+                    choice = chosingEquipment();
+                    break;
+                case 5:
+                    System.out.println("Enter weight and cost equipment");
+                    elementsOfEquipments.add(new MotoGloves(sc.nextDouble(), sc.nextDouble()));
+                    choice = chosingEquipment();
+                    break;
+                case 6:
+                    System.out.println("Enter weight and cost equipment");
+                    elementsOfEquipments.add(new MotoJacket(sc.nextDouble(), sc.nextDouble()));
+                    choice = chosingEquipment();
+                    break;
+                case 7:
+                    System.out.println("Enter weight and cost equipment");
+                    elementsOfEquipments.add(new MotoPants(sc.nextDouble(), sc.nextDouble()));
+                    choice = chosingEquipment();
+                    break;
+                case 8:
+                    System.out.println("Enter weight and cost equipment");
+                    elementsOfEquipments.add(new Shells(sc.nextDouble(), sc.nextDouble()));
+                    choice = chosingEquipment();
+                    break;
+                case 0:
+                    break;
+                default:
+                    System.out.println("Try again");
+                    break;
+            }
+        }
+        return elementsOfEquipments;
     }
 
     /** Show equipment wearing */
