@@ -6,10 +6,10 @@ import java.util.Scanner;
 public abstract class ReadingDataConsole {
     Scanner sc = new Scanner(System.in);
 
-    public int chosingEquipment() {
+    public int choosingEquipment() {
         int choice = -1;
 
-        System.out.println("What do you want to wear?");
+        System.out.println("What do you want to put on?");
 
             System.out.println("\nChoose one of the equipment:");
             System.out.println("1. Ellow pads");
@@ -29,16 +29,14 @@ public abstract class ReadingDataConsole {
                 sc.next();
                 choice = -1;
             }
-
         return choice;
     }
 
-    public int showOptions(){
+    public int choosingOptions(){
         int choice = -1;
 
         System.out.println("Hello! What do you want to do?");
 
-        while (choice != 0) {
             System.out.println("\nChoose one of the options:");
             System.out.println("1. See what kind of equipment you are wearing.");
             System.out.println("2. Equip a motorcyclist. ");
@@ -54,7 +52,6 @@ public abstract class ReadingDataConsole {
                 sc.next();
                 choice = -1;
             }
-        }
         return choice;
     }
 }

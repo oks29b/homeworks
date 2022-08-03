@@ -1,9 +1,5 @@
 package com.homeworks.app.homework1.moto;
 
-import com.homeworks.app.homework1.equipment.*;
-
-import java.util.InputMismatchException;
-import java.util.Scanner;
 
 /**
  * This class realizes the main logic of the program, provides methods to
@@ -11,7 +7,7 @@ import java.util.Scanner;
  * @author Oksana Borisenko
  */
 
-public class Motorcyclist {
+public class Motorcyclist{
     private String name; //motorcyclist's name
 
     private MotorcyclistService motorcyclistService;
@@ -28,7 +24,7 @@ public class Motorcyclist {
      * Constructor with parameter - name.
      */
 
-    public Motorcyclist(String name) {
+    public Motorcyclist (String name) {
         this.name = name;
     }
 
@@ -53,11 +49,11 @@ public class Motorcyclist {
         this.name = name;
     }
 
-    public MotorcyclistService getEquipMotorcyclist (){
+    public MotorcyclistService getMotorcyclistService (){
         return motorcyclistService;
     }
 
-    public void setEquipMotorcyclist(MotorcyclistService motorcyclistService) {
+    public void setMotorcyclistService(MotorcyclistService motorcyclistService) {
         this.motorcyclistService = motorcyclistService;
     }
 
@@ -136,76 +132,76 @@ public class Motorcyclist {
 //        return motorcyclistService;
 //    }
 
-    /**
-     * Shows all the available options for user.
-     */
+//    /**
+//     * Shows all the available options for user.
+//     */
 
-    public void showOptions() {
-        Scanner sc = new Scanner(System.in);
-        System.gc();
-        int choice = -1;
-
-        System.out.println("Hello! My name is " + name + ".");
-        System.out.println("What do you want to do?");
-
-        while (choice != 0) {
-            System.out.println("\nChoose one of the options:");
-            System.out.println("1. See what kind of equipment you are wearing.");
-            System.out.println("2. Equip a motorcyclist. ");
-            System.out.println("3. Calculate the cost of wearing");
-            System.out.println("4. Sort ammunition based on weight.");
-            System.out.println("5. Find items of ammunition corresponding to a given range of price parameters.");
-            System.out.println("0. Exit");
-
-            try {
-                choice = sc.nextInt();
-            } catch (InputMismatchException e) {
-                System.out.println("Wrong option!");
-                sc.next();
-                choice = -1;
-            }
-
-            switch (choice) {
-                case 1:
-                    try {
-                        motorcyclistService.showEquipmentWearing();
-                    }catch (NullPointerException e){
-                        System.out.println("First put on a motorcyclist");
-                    }
-                    break;
-                case 2:
-//                    putOnSelectedElementsEquipment();
-                    break;
-                case 3:
-                    try {
-                        System.out.println("Total cost is " + motorcyclistService.countCost());
-                    }catch (NullPointerException e){
-                        System.out.println("First put on a motorcyclist");
-                    }
-                    break;
-                case 4:
-                    try {
-                        motorcyclistService.sortElementsEquipmentByWeight();
-                    }catch (NullPointerException e){
-                        System.out.println("First put on a motorcyclist");
-                    }
-                    break;
-                case 5:
-                    try {
-                        motorcyclistService.findEquipByPriceRange();
-                    }catch (NullPointerException e){
-                        System.out.println("First put on a motorcyclist");
-                    }
-                    break;
-                case 0:
-                    sc.close();
-                    break;
-                default:
-                    System.out.println("Try again");
-                    break;
-            }
-        }
-    }
+//    public void showOptions() {
+//        Scanner sc = new Scanner(System.in);
+//        System.gc();
+//        int choice = -1;
+//
+//        System.out.println("Hello! My name is " + name + ".");
+//        System.out.println("What do you want to do?");
+//
+//        while (choice != 0) {
+//            System.out.println("\nChoose one of the options:");
+//            System.out.println("1. See what kind of equipment you are wearing.");
+//            System.out.println("2. Equip a motorcyclist. ");
+//            System.out.println("3. Calculate the cost of wearing");
+//            System.out.println("4. Sort ammunition based on weight.");
+//            System.out.println("5. Find items of ammunition corresponding to a given range of price parameters.");
+//            System.out.println("0. Exit");
+//
+//            try {
+//                choice = sc.nextInt();
+//            } catch (InputMismatchException e) {
+//                System.out.println("Wrong option!");
+//                sc.next();
+//                choice = -1;
+//            }
+//
+//            switch (choice) {
+//                case 1:
+//                    try {
+//                        motorcyclistService.showEquipmentWearing();
+//                    }catch (NullPointerException e){
+//                        System.out.println("First put on a motorcyclist");
+//                    }
+//                    break;
+//                case 2:
+////                    putOnSelectedElementsEquipment();
+//                    break;
+//                case 3:
+//                    try {
+//                        System.out.println("Total cost is " + motorcyclistService.countCost());
+//                    }catch (NullPointerException e){
+//                        System.out.println("First put on a motorcyclist");
+//                    }
+//                    break;
+//                case 4:
+//                    try {
+//                        motorcyclistService.sortElementsEquipmentByWeight();
+//                    }catch (NullPointerException e){
+//                        System.out.println("First put on a motorcyclist");
+//                    }
+//                    break;
+//                case 5:
+//                    try {
+//                        motorcyclistService.findEquipByPriceRange();
+//                    }catch (NullPointerException e){
+//                        System.out.println("First put on a motorcyclist");
+//                    }
+//                    break;
+//                case 0:
+//                    sc.close();
+//                    break;
+//                default:
+//                    System.out.println("Try again");
+//                    break;
+//            }
+//        }
+//    }
 
     /**
      * Output to the console.
@@ -213,7 +209,6 @@ public class Motorcyclist {
 
     @Override
     public String toString() {
-        return "Motorcyclist " +
-                "name is " + name + " " + motorcyclistService + " is wearing: ";
+        return "Motorcyclist name is " + name +".";
     }
 }

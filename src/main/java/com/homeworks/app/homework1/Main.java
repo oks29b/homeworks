@@ -1,6 +1,7 @@
 package com.homeworks.app.homework1;
 
 import com.homeworks.app.homework1.moto.Motorcyclist;
+import com.homeworks.app.homework1.moto.MotorcyclistService;
 
 /**
  * Homework №1
@@ -20,7 +21,10 @@ import com.homeworks.app.homework1.moto.Motorcyclist;
 public class Main {
     public static void main( String[] args ) {
 
-        Motorcyclist motorcyclist = new Motorcyclist("Maks");
-        motorcyclist.showOptions();
+        MotorcyclistService motorcyclistService= new MotorcyclistService();
+        Motorcyclist motorcyclist = new Motorcyclist("Maks", motorcyclistService);
+        System.out.println(motorcyclist.getName());
+        motorcyclist.getMotorcyclistService().showOptions();
+
     }
 }
