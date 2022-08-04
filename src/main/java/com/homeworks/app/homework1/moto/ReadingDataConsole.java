@@ -3,7 +3,7 @@ package com.homeworks.app.homework1.moto;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public abstract class ReadingDataConsole {
+public class ReadingDataConsole {
     Scanner sc = new Scanner(System.in);
 
     public int choosingEquipment() {
