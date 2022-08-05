@@ -63,6 +63,6 @@ public class Motorcyclist{
 
     @Override
     public String toString() {
-        return "Motorcyclist name is " + name +".";
+        return "Motorcyclist name is " + name +". He is wearing:\n " + motorcyclistService;
     }
 }

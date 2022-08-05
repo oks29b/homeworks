@@ -9,9 +9,9 @@ import java.util.*;
  * @author Oksana Borisenko
  */
 
-public class MotorcyclistService extends ReadingDataConsole{
+public class MotorcyclistService{
 
-    private List<Equipment> elementsOfEquipments;
+    private List<Equipment> elementsOfEquipments = new ArrayList<Equipment>();
 
     public List<Equipment> getElementsOfEquipments() {
         return elementsOfEquipments;
@@ -30,74 +30,19 @@ public class MotorcyclistService extends ReadingDataConsole{
     }
 
     /**
-     * Shows all the available equipment for user.
      * @brief Put equip on
      */
 
-    public List<Equipment> putOnSelectedElements(){
-        elementsOfEquipments = new ArrayList<Equipment>();
-        int choice = choosingEquipment();
-        while ( choice != 0){
-            switch (choice){
-                case 1:
-                    System.out.println("Enter weight and cost equipment");
-                    elementsOfEquipments.add(new EllowPads(sc.nextDouble(), sc.nextDouble()));
-                    choice = -1;
-                    break;
-                case 2:
-                    System.out.println("Enter weight and cost equipment");
-                    elementsOfEquipments.add(new Helmet(sc.nextDouble(), sc.nextDouble()));
-                    choice = -1;
-                    break;
-                case 3:
-                    System.out.println("Enter weight and cost equipment");
-                    elementsOfEquipments.add(new KneePads(sc.nextDouble(), sc.nextDouble()));
-                    choice = -1;
-                    break;
-                case 4:
-                    System.out.println("Enter weight and cost equipment");
-                    elementsOfEquipments.add(new MotoBoots(sc.nextDouble(), sc.nextDouble()));
-                    choice = -1;
-                    break;
-                case 5:
-                    System.out.println("Enter weight and cost equipment");
-                    elementsOfEquipments.add(new MotoGloves(sc.nextDouble(), sc.nextDouble()));
-                    choice = -1;
-                    break;
-                case 6:
-                    System.out.println("Enter weight and cost equipment");
-                    elementsOfEquipments.add(new MotoJacket(sc.nextDouble(), sc.nextDouble()));
-                    choice = -1;
-                    break;
-                case 7:
-                    System.out.println("Enter weight and cost equipment");
-                    elementsOfEquipments.add(new MotoPants(sc.nextDouble(), sc.nextDouble()));
-                    choice = -1;
-                    break;
-                case 8:
-                    System.out.println("Enter weight and cost equipment");
-                    elementsOfEquipments.add(new Shells(sc.nextDouble(), sc.nextDouble()));
-                    choice = -1;
-                    break;
-                case 0:
-                    break;
-                default:
-                    System.out.println("Try again\n");
-                    choice = choosingEquipment();
-                    break;
+    public List<Equipment> putEquipOn(Equipment e) {
+
+        for(Equipment it: elementsOfEquipments) {
+            if(e.getName() == it.getName()) {
+                System.out.println(e.getName() + " is already put on!");
+                return elementsOfEquipments;
             }
         }
+        elementsOfEquipments.add(e);
         return elementsOfEquipments;
-    }
-
-    /** Show equipment wearing */
-    public void showEquipmentWearing(){
-
-        System.out.println("You are wearing: ");
-        for (Equipment e :elementsOfEquipments) {
-            System.out.println(e.toString());
-        }
-        System.out.println("Total cost: " + countCost() + "rub");
     }
 
     /**
@@ -129,92 +74,22 @@ public class MotorcyclistService extends ReadingDataConsole{
      * @return List of found equipment.
      */
 
-    public void findEquipByPriceRange(){
-        Scanner sc = new Scanner(System.in);
-        double lowerCost, upperCost;
+    public List<Equipment>findEquipByPriceRange(double lowerCost, double upperCost){
         double cost;
-        System.out.println("Enter the lower limit:");
-        try {
-            lowerCost = sc.nextDouble();
-        }catch (InputMismatchException e){
-            System.out.println("Wrong input..");
-            sc.next();
-            return;
-        }
-
-        System.out.println("Enter the upper limit:");
-        try {
-            upperCost = sc.nextDouble();
-        }catch (InputMismatchException e){
-            System.out.println("Wrong input..");
-            sc.next();
-            return;
-        }
+        List<Equipment> equipment = new ArrayList<>();
         System.out.println("The costs of equipments ranges from " + lowerCost + " to " + upperCost + ": ");
         for(Equipment e: elementsOfEquipments){
             cost = e.getCost();
             if(cost >= lowerCost && cost <= upperCost) {
-                System.out.println(e.getName() + " cost " + e.getCost() + "rub");
+                equipment.add(e);
             }
         }
-    }
-
-    /**
-     * Shows all the available options for user.
-     */
-    public void showOptions(){
-    int choice = choosingOptions();
-    while (choice != 0){
-        switch (choice) {
-            case 1:
-                if(elementsOfEquipments.isEmpty()){
-                    System.out.println("You haven't added any elements yet=(\n");
-                    choice = -1;
-                    break;
-                }else {
-                    showEquipmentWearing();
-                }
-                choice = choosingOptions();
-                break;
-            case 2:
-                System.out.println(putOnSelectedElements() + "\n");
-                choice = choosingOptions();
-                break;
-            case 3:
-                System.out.println("Total cost is " + countCost() + "\n");
-                choice = choosingOptions();
-                break;
-            case 4:
-                if(elementsOfEquipments.isEmpty()){
-                    System.out.println("There is no equipment on the motorcyclist\n");
-                    choice = -1;
-                    break;
-                }else {
-                    sortElementsEquipmentByWeight();
-                }
-                choice = choosingOptions();
-                break;
-            case 5:
-                if(elementsOfEquipments.isEmpty()){
-                    System.out.println("There is no equipment on the motorcyclist\n");
-                    choice = -1;
-                    break;
-                }else {
-                    findEquipByPriceRange();
-                }
-                choice = choosingOptions();
-                break;
-            case 0:
-                sc.close();
-                break;
-            default:
-                System.out.println("Try again\n");
-                choice = choosingOptions();
-                break;
-            }
+        if(equipment.isEmpty()){System.out.println("There is no equipment in this price range");
+        return null;
+        }else {
+            return equipment;
         }
     }
-
 
     /**
      * Output to the console.
