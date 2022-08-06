@@ -7,14 +7,18 @@ import com.homeworks.app.homework1.equipment.Shells;
 import com.homeworks.app.homework1.moto.MotorcyclistService;
 import org.junit.Assert;
 import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.mockito.Mockito.*;
+
 public class MotocyclistServiceTest {
 
     @Test
-    public void test1(){
+    public void putEquipOnTest(){
         Helmet helmet =new Helmet(10,20);
         KneePads kneePads = new KneePads(20,30);
         Shells shells = new Shells(40,50);
@@ -33,7 +37,7 @@ public class MotocyclistServiceTest {
     }
 
     @Test
-    public void test2(){
+    public void countCostTest(){
         MotorcyclistService motorcyclistService = new MotorcyclistService();
         List<Equipment> e  = new ArrayList<>();
         e.add(new Helmet(10,20));
@@ -46,7 +50,7 @@ public class MotocyclistServiceTest {
     }
 
     @Test
-    public void test3(){
+    public void findEquipByPriceRangeTest1(){
         MotorcyclistService motorcyclistService = new MotorcyclistService();
         Helmet helmet =new Helmet(10,20);
         KneePads kneePads = new KneePads(20,30);
@@ -63,5 +67,31 @@ public class MotocyclistServiceTest {
         actualResult.add(kneePads);
 
         Assert.assertEquals(motorcyclistService.findEquipByPriceRange(10,40),actualResult);
+    }
+
+    @Test
+    public void findEquipByPriceRangeTest2(){
+        MotorcyclistService motorcyclistService = new MotorcyclistService();
+        Helmet helmet =new Helmet(10,20);
+        KneePads kneePads = new KneePads(20,30);
+        Shells shells = new Shells(40,50);
+        List<Equipment> expectedResult  = new ArrayList<>();
+        expectedResult.add(helmet);
+        expectedResult.add(kneePads);
+        expectedResult.add(shells);
+        motorcyclistService.setElementsOfEquipments(expectedResult);
+
+
+        List<Equipment> actualResult  = null;
+
+        Assert.assertEquals(motorcyclistService.findEquipByPriceRange(0,10),actualResult);
+    }
+
+
+    @Test
+    public void sortEquipmentMockitoTest(){
+        MotorcyclistService mockMotoService = Mockito.mock(MotorcyclistService.class);
+        mockMotoService.sortElementsEquipmentByWeight();
+        verify(mockMotoService, times(1)).sortElementsEquipmentByWeight();
     }
 }

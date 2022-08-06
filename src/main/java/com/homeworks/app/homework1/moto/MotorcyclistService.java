@@ -64,7 +64,8 @@ public class MotorcyclistService{
                 return (int) (e1.getWeight() - e2.getWeight());
             }
         });
-        System.out.println(elementsOfEquipments.toString());
+
+        System.out.println("Sort equipment by weight\n" + elementsOfEquipments.toString());
     }
 
 

@@ -1,8 +1,6 @@
 package com.homeworks.app.homework1;
 
-import com.homeworks.app.homework1.equipment.Helmet;
-import com.homeworks.app.homework1.equipment.KneePads;
-import com.homeworks.app.homework1.equipment.Shells;
+import com.homeworks.app.homework1.equipment.*;
 import com.homeworks.app.homework1.moto.Motorcyclist;
 import com.homeworks.app.homework1.moto.MotorcyclistService;
 
@@ -24,13 +22,20 @@ import com.homeworks.app.homework1.moto.MotorcyclistService;
 public class Main {
     public static void main( String[] args ) {
 
+        Motorcyclist motorcyclist = new Motorcyclist("Maks");
         MotorcyclistService motorcyclistService= new MotorcyclistService();
 
-        Motorcyclist motorcyclist = new Motorcyclist("Maks", motorcyclistService);
-        motorcyclistService.putEquipOn(new Shells(10,20));
-        motorcyclistService.putEquipOn(new Helmet(20,30));
-        motorcyclistService.putEquipOn(new KneePads(20,30));
-        System.out.println(motorcyclistService.findEquipByPriceRange(0,1));
+        motorcyclist.setMotorcyclistService(motorcyclistService);
+
+        motorcyclistService.putEquipOn(new MotoJacket(25,45));
+        motorcyclistService.putEquipOn(new Helmet(40,70));
+        motorcyclistService.putEquipOn(new KneePads(16,30));
+        motorcyclistService.putEquipOn(new MotoBoots(20,12));
+
         System.out.println(motorcyclist);
+        System.out.println("Total cost: " + motorcyclist.getMotorcyclistService().countCost() + "\n");
+
+        motorcyclistService.sortElementsEquipmentByWeight();
+        System.out.println("\n" + motorcyclistService.findEquipByPriceRange(0,20));
     }
 }
