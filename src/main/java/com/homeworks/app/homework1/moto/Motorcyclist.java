@@ -1,6 +1,11 @@
 package com.homeworks.app.homework1.moto;
 
 
+import com.homeworks.app.homework1.equipment.Equipment;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * This class realizes the main logic of the program, provides methods to
  * equip motorcyclist.
@@ -10,7 +15,7 @@ package com.homeworks.app.homework1.moto;
 public class Motorcyclist{
     private String name; //motorcyclist's name
 
-    private MotorcyclistService motorcyclistService;
+    private List<Equipment> elementsOfEquipments = new ArrayList<Equipment>();
 
     /**
      * Default constructor.
@@ -28,13 +33,14 @@ public class Motorcyclist{
         this.name = name;
     }
 
+
     /**
      * Constructor with all parameter.
      */
 
-    public Motorcyclist(String name, MotorcyclistService motorcyclistService) {
+    public Motorcyclist(String name, List<Equipment> elementsOfEquipments) {
         this.name = name;
-        this.motorcyclistService = motorcyclistService;
+        this.elementsOfEquipments = elementsOfEquipments;
     }
 
     /**
@@ -49,12 +55,12 @@ public class Motorcyclist{
         this.name = name;
     }
 
-    public MotorcyclistService getMotorcyclistService (){
-        return motorcyclistService;
+    public List<Equipment> getElementsOfEquipments() {
+        return elementsOfEquipments;
     }
 
-    public void setMotorcyclistService(MotorcyclistService motorcyclistService) {
-        this.motorcyclistService = motorcyclistService;
+    public void setElementsOfEquipments(List<Equipment> elementsOfEquipments) {
+        this.elementsOfEquipments = elementsOfEquipments;
     }
 
     /**
@@ -63,6 +69,6 @@ public class Motorcyclist{
 
     @Override
     public String toString() {
-        return "Motorcyclist name is " + name +". He is wearing:\n " + motorcyclistService;
+        return "Motorcyclist name is " + name +". He is wearing:\n " + elementsOfEquipments;
     }
 }

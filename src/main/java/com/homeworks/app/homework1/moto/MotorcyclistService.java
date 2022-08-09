@@ -11,18 +11,6 @@ import java.util.*;
 
 public class MotorcyclistService{
 
-    private List<Equipment> elementsOfEquipments = new ArrayList<Equipment>();
-
-    public List<Equipment> getElementsOfEquipments() {
-        return elementsOfEquipments;
-    }
-
-    public void setElementsOfEquipments(List<Equipment> elementsOfEquipments) {
-        this.elementsOfEquipments = elementsOfEquipments;
-    }
-
-
-
     /**
      * Default constructor
      */
@@ -33,39 +21,39 @@ public class MotorcyclistService{
      * @brief Put equip on
      */
 
-    public List<Equipment> putEquipOn(Equipment e) {
+    public List<Equipment> putEquipOn(List<Equipment> e, Equipment equipment) {
 
-        for(Equipment it: elementsOfEquipments) {
-            if(e.getName() == it.getName()) {
-                System.out.println(e.getName() + " is already put on!");
-                return elementsOfEquipments;
+        for(Equipment it: e) {
+            if(equipment.getName() == it.getName()) {
+                System.out.println(equipment.getName() + " is already put on!");
+                return e;
             }
         }
-        elementsOfEquipments.add(e);
-        return elementsOfEquipments;
+        e.add(equipment);
+        return e;
     }
 
     /**
      * @return Total equipment cost
      */
-    public double countCost(){
+    public double countCost(List<Equipment> equipment){
         double cost = 0;
-        for (Equipment e:elementsOfEquipments) {
+        for (Equipment e:equipment) {
             cost += e.getCost();
         }
         return cost;
     }
 
     /** Sort equipment by weight */
-    public void sortElementsEquipmentByWeight(){
-        Collections.sort(elementsOfEquipments, new Comparator<Equipment>() {
+    public void sortElementsEquipmentByWeight(List<Equipment> equipment){
+        Collections.sort(equipment, new Comparator<Equipment>() {
             @Override
             public int compare(Equipment e1, Equipment e2) {
                 return (int) (e1.getWeight() - e2.getWeight());
             }
         });
 
-        System.out.println("Sort equipment by weight\n" + elementsOfEquipments.toString());
+        System.out.println("Sort equipment by weight\n" + equipment.toString());
     }
 
 
@@ -75,28 +63,22 @@ public class MotorcyclistService{
      * @return List of found equipment.
      */
 
-    public List<Equipment>findEquipByPriceRange(double lowerCost, double upperCost){
+    public List<Equipment>findEquipByPriceRange(double lowerCost, double upperCost, List<Equipment> equipment){
         double cost;
-        List<Equipment> equipment = new ArrayList<>();
+        List<Equipment> newEquipment = new ArrayList<>();
         System.out.println("The costs of equipments ranges from " + lowerCost + " to " + upperCost + ": ");
-        for(Equipment e: elementsOfEquipments){
+        for(Equipment e: equipment){
             cost = e.getCost();
             if(cost >= lowerCost && cost <= upperCost) {
-                equipment.add(e);
+                newEquipment.add(e);
             }
         }
-        if(equipment.isEmpty()){System.out.println("There is no equipment in this price range");
-        return null;
+
+        if(newEquipment.isEmpty()){System.out.println("There is no equipment in this price range");
+            return null;
         }else {
-            return equipment;
+            return newEquipment;
         }
     }
 
-    /**
-     * Output to the console.
-     */
-    @Override
-    public String toString() {
-        return "\nelement of equipments = " + "\n" + elementsOfEquipments + "\n";
-    }
 }

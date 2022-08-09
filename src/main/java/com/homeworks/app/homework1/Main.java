@@ -25,17 +25,17 @@ public class Main {
         Motorcyclist motorcyclist = new Motorcyclist("Maks");
         MotorcyclistService motorcyclistService= new MotorcyclistService();
 
-        motorcyclist.setMotorcyclistService(motorcyclistService);
+        motorcyclistService.putEquipOn(motorcyclist.getElementsOfEquipments(), new MotoJacket(25,45));
+        motorcyclistService.putEquipOn(motorcyclist.getElementsOfEquipments(), new Helmet(40,70));
+        motorcyclistService.putEquipOn(motorcyclist.getElementsOfEquipments(), new KneePads(16,30));
+        motorcyclistService.putEquipOn(motorcyclist.getElementsOfEquipments(), new MotoBoots(20,12));
 
-        motorcyclistService.putEquipOn(new MotoJacket(25,45));
-        motorcyclistService.putEquipOn(new Helmet(40,70));
-        motorcyclistService.putEquipOn(new KneePads(16,30));
-        motorcyclistService.putEquipOn(new MotoBoots(20,12));
+        System.out.println(motorcyclist + "\n");
 
-        System.out.println(motorcyclist);
-        System.out.println("Total cost: " + motorcyclist.getMotorcyclistService().countCost() + "\n");
+        System.out.println("Total cost: " + motorcyclistService.countCost(motorcyclist.getElementsOfEquipments()) + "\n");
 
-        motorcyclistService.sortElementsEquipmentByWeight();
-        System.out.println("\n" + motorcyclistService.findEquipByPriceRange(0,20));
+        motorcyclistService.sortElementsEquipmentByWeight(motorcyclist.getElementsOfEquipments());
+
+        System.out.println("\n" + motorcyclistService.findEquipByPriceRange(20,50, motorcyclist.getElementsOfEquipments()));
     }
 }
